@@ -1,18 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
-$darkAccent: #191b1b;
-$lightAccent: #a4a9b4;
-$backgroundBase: #ffffff;
+$darkAccent: #00000075;
+$backgroundBase: #ffffffcc;
 
 $shadow: 1px 1px 10px 2px darken($backgroundBase, 20%);
 $default-border: 1px solid darken($backgroundBase, 35%);
 
 .title {
   text-align: center;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
@@ -32,114 +27,27 @@ body {
   background-color: lighten($backgroundBase, 30%);
   border: $default-border;
   box-shadow: $shadow;
-  border-top: none;
-}
-
-.toolbar {
-  display: flex;
-  align-items: center;
-  background-color: lighten($darkAccent, 25%);
-  padding: 0.3rem;
-  border: $default-border;
-  box-shadow: $shadow;
-  font-family: Russo One;
-  font-size: 1rem;
-  color: black;
-  i {
-    width: 25px;
-    margin-left: 5px;
-  }
-  .fa-arrows-alt,
-  .fa-compress {
-    margin-left: auto;
-  }
-}
-
-.fa-retweet,
-.fa-compress,
-.fa-arrows-alt {
-  &:hover {
-    color: lighten($lightAccent, 10%);
-    cursor: pointer;
-  }
-}
-
-.fa-free-code-camp {
-  margin-right: 3px;
 }
 
 .editorWrap {
-  max-width: 600px;
   margin: 1.125rem auto;
-  .toolbar {
-    width: 99%;
-  }
   textarea {
     @extend .colorScheme;
-    width: 99%;
-    min-height: 200px;
-    margin-bottom: -5px;
+    min-height: 400px;
     resize: vertical;
     outline: none;
-    padding-left: 5px;
-    padding-top: 5px;
+    padding: 5px;
     font-size: 0.875rem;
   }
-}
-
-.converter {
-  width: 100px;
-  text-align: center;
-  font-size: 35px;
-  margin: auto;
 }
 
 .previewWrap {
   @extend .colorScheme;
   max-width: 800px;
   margin: 1.25rem auto;
-  min-height: 200px;
+  min-height: 400px;
   overflow-wrap: break-word;
-}
-
-@media screen and (max-width: 850px) {
-  .previewWrap {
-    max-width: 630px;
-  }
-  .editorWrap {
-    max-width: 550px;
-  }
-}
-
-.maximized {
-  width: 96%;
-  min-height: 100vh;
-  margin: auto;
-  textarea {
-    min-height: 95vh;
-    resize: none;
-  }
-}
-
-.hide {
-  display: none;
-}
-
-@media screen and (max-width: 650px) {
-  body {
-    margin: 5px 0;
-  }
-  .editorWrap {
-    width: 80vw;
-    margin: 0 auto;
-  }
-  .maximized {
-    width: 95%;
-    margin: auto;
-  }
-  .previewWrap {
-    width: 90vw;
-  }
+  padding: 5px;
 }
 
 // MARKDOWN STYLES
@@ -192,13 +100,7 @@ body {
 
   img {
     display: block;
-    max-width: 90%;
+    max-width: 80%;
     margin: 2rem auto;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  body {
-    font-size: 0.875rem;
   }
 }

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-coy.css';
 import marked from 'marked';
 import './App.scss';
 
@@ -60,25 +62,27 @@ And here. | Okay. | I think we get it.
         <h1 className="title">Preview Your Markdown</h1>
       </Row>
       <Row>
-        <Col>
+        <Col className="previewWrap editorWrap">
           <h2 className="title">Editor</h2>
           <textarea
             className="form-control"
             id="editor"
             value={text}
             onChange={(e) => setText(e.target.value)}
-          >
-            some text
-          </textarea>
+          />
         </Col>
-        <Col>
+        <Col className="previewWrap">
           <h2 className="title">Previewer</h2>
           <div
             className="form-control"
             id="preview"
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
-              __html: marked(text, { gfm: true, breaks: true }),
+              __html: marked(text, {
+                gfm: true,
+                breaks: true,
+                highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
+              }),
             }}
           />
         </Col>
