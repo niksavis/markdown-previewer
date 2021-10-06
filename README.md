@@ -1,4 +1,4 @@
-# Random Quote Machine
+# Markdown Previewer
 
 This is an implementation of a markdown previewer for [freeCodeCamp](https://www.freecodecamp.org/) front end library certification based on React.
 
